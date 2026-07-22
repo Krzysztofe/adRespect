@@ -70,6 +70,13 @@ body {
   padding-inline: 1.5rem;
 }
 
+._container-sm {
+  width: 100%;
+  max-width: 1040px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
 @media (min-width: 950px) {
   ._container-half {
     width: 100%;

@@ -3,12 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { galleryImages } from "@/data/galleryImages";
-import Button from "./shared/buttons/Button";
-import Icon from "./shared/Icon";
+import Button from "../shared/buttons/Button";
+import Icon from "../shared/Icon";
+import Lightbox from "./LightBox";
 
 const Gallery = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [galleryHeight, setGalleryHeight] = useState(0);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const masonryRef = useRef<HTMLDivElement>(null);
 
@@ -28,9 +30,9 @@ const Gallery = () => {
   const visibleImages = isExpanded ? galleryImages : galleryImages.slice(0, 15);
 
   return (
-    <section>
-      <div className="_container bg-bg-dark relative">
-        <div className="p-20">
+    <section className="bg-bg-dark pb-8">
+      <div className="_container relative">
+        <div className="p-30">
           <p className="text-xs text-accent">Realizacje</p>
           <h2 className="text-lg">
             Nasze <span className="italic">projekty</span>
@@ -59,15 +61,21 @@ const Gallery = () => {
               }}
             >
               <Masonry>
-                {visibleImages.map(({ src, alt }) => (
-                  <img
+                {visibleImages.map(({ src, alt }, index) => (
+                  <button
                     key={alt}
-                    src={src}
-                    alt={alt}
-                    loading="lazy"
-                    decoding="async"
-                    className="block w-full"
-                  />
+                    onClick={() => setActiveIndex(index)}
+                    className="block w-full cursor-pointer"
+                  >
+                    <img
+                      key={alt}
+                      src={src}
+                      alt={alt}
+                      loading="lazy"
+                      decoding="async"
+                      className="block w-full"
+                    />
+                  </button>
                 ))}
               </Masonry>
             </ResponsiveMasonry>
@@ -76,14 +84,7 @@ const Gallery = () => {
         {!isExpanded && (
           <div
             className="
-                pointer-events-none
-      absolute
-      bottom-0
-      left-0
-      w-full
-      bg-gradient-to-t
-      from-bg-dark
-      to-transparent
+                pointer-events-none absolute bottom-0 left-0 w-full bg-gradient-to-t from-bg-dark to-transparent
     "
             style={{
               height: `${galleryHeight / 3}px`,
@@ -106,6 +107,12 @@ const Gallery = () => {
           />
         </div>
       </div>
+      <Lightbox
+        images={visibleImages}
+        activeIndex={activeIndex}
+        onClose={() => setActiveIndex(null)}
+        onChange={(index) => setActiveIndex(index)}
+      />
     </section>
   );
 };

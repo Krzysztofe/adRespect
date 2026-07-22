@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import Hero from "@/components/hero/Hero";
-import Gallery from "@/components/Gallery";
+import Gallery from "@/components/gallery/Gallery";
 export const metadata: Metadata = {
   title: "Giard Design - strona główna",
 };
