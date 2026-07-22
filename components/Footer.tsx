@@ -32,7 +32,7 @@ const Footer = () => {
           <ul className="flex flex-col sm:flex-row gap-6 sm:gap-20">
             {links.map((link) => {
               return (
-                <li>
+                <li className="flex justify-center">
                   <ButtonLink
                     message={link}
                     link={`/${link}`}
@@ -48,7 +48,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-between items-center sm:pt-20">
-          <p>Prawa zastrzeżone 2022</p>
+          <p>Prawa zastrzeżone &copy; 2022</p>
           <div className="flex gap-8 items-center">
             <p>made by</p>
             <Image

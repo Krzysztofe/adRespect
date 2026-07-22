@@ -44,7 +44,7 @@ const Gallery = () => {
           style={{
             height: isExpanded
               ? `${galleryHeight}px`
-              : `${galleryHeight / 2}px`,
+              : `${galleryHeight / 1.8}px`,
           }}
         >
           <div ref={masonryRef}>

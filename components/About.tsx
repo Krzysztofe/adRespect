@@ -2,7 +2,7 @@ import Image from "next/image";
 import ButtonLink from "./shared/buttons/ButtonLink";
 import Icon from "./shared/Icon";
 
-const Passion = () => {
+const About = () => {
   return (
     <section>
       <div className="lg:flex lg:flex-row-reverse items-stretch">
@@ -54,4 +54,4 @@ const Passion = () => {
   );
 };
 
-export default Passion;
+export default About;
