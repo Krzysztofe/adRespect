@@ -14,7 +14,7 @@ const Icon = ({ icon, size = 30, className }: Props) => {
         width: `${size}px`,
         height: `${size}px`,
       }}
-      className={className}
+      className={`bg-current ${className}`}
     ></div>
   );
 };

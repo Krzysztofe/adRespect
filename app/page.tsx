@@ -1,5 +1,9 @@
-import Hero from "@/components/Hero";
-import Image from "next/image";
+import type { Metadata } from "next";
+
+import Hero from "@/components/hero/Hero";
+export const metadata: Metadata = {
+  title: "Giard Design - strona główna",
+};
 
 export default function Home() {
   return (
