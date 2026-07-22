@@ -48,9 +48,9 @@
   :root {
     --text-sm: 1.4rem;
     --text-base: 1.6rem;
-    --text-lg: 4.8rem;
-    --text-xl: 6rem;
-    --text-2xl: 4.8rem;
+    --text-lg: 4rem;
+    --text-xl: 4.8rem;
+    --text-2xl: 6rem;
   }
 }
 
@@ -84,11 +84,11 @@ body {
   }
 }
 .btn-primary {
-  @apply w-fit text-center border border-accent text-sm bg-accent px-12 py-3 text-white hover:!bg-white hover:text-accent rounded-full;
+  @apply w-fit text-center border border-accent  bg-accent px-12 py-3 text-white hover:!bg-white hover:text-accent rounded-full;
 }
 
 .btn-primary-empty {
-  @apply w-fit text-center border border-accent text-sm bg-transparent px-12 py-3 text-accent hover:!bg-accent hover:text-white rounded-full;
+  @apply w-fit text-center border border-accent bg-transparent px-12 py-3 text-accent hover:!bg-accent hover:text-white rounded-full;
 }
 
 .btn-primary-empty-dark {

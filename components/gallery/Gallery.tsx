@@ -30,8 +30,8 @@ const Gallery = () => {
   const visibleImages = isExpanded ? galleryImages : galleryImages.slice(0, 15);
 
   return (
-    <section className="bg-bg-dark pb-8">
-      <div className="_container relative">
+    <section>
+      <div className="_container relative bg-bg-dark pb-8">
         <div className="p-30">
           <p className="text-xs text-accent">Realizacje</p>
           <h2 className="text-lg">
@@ -92,7 +92,7 @@ const Gallery = () => {
           />
         )}
 
-        <div className="absolute bottom-[4rem] left-1/2 -translate-x-1/2 flex justify-center py-10">
+        <div className="absolute bottom-26 left-1/2 -translate-x-1/2 flex justify-center py-10">
           <Button
             icon={
               <Icon
