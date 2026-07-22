@@ -15,7 +15,7 @@ function HeroSlider() {
     <div className="embla h-full relative">
       <div className="embla__viewport h-full" ref={emblaRef}>
         <div className="embla__container h-full">
-          {sliderItems.map(({ component, src }, idx) => {
+          {sliderItems.map(({ component, src, alt }, idx) => {
             return (
               <div className="embla__slide lg:flex h-full" key={idx}>
                 <div className="lg:w-1/2">
@@ -24,10 +24,10 @@ function HeroSlider() {
                   </div>
                 </div>
 
-                <div className="relative lg:w-1/2 h-full min-h-[30]">
+                <div className="relative lg:w-1/2 h-full min-h-[40rem]">
                   <Image
                     src={src}
-                    alt="Giard Design"
+                    alt={alt}
                     fill
                     className="object-cover"
                     priority

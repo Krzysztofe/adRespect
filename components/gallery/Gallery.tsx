@@ -30,7 +30,7 @@ const Gallery = () => {
   const visibleImages = isExpanded ? galleryImages : galleryImages.slice(0, 15);
 
   return (
-    <section>
+    <section id="gallery">
       <div className="_container relative bg-bg-dark pb-8">
         <div className="p-30">
           <p className="text-xs text-accent">Realizacje</p>

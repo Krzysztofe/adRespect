@@ -1,4 +1,3 @@
-import Button from "../shared/buttons/Button";
 import ButtonLink from "../shared/buttons/ButtonLink";
 import Icon from "../shared/Icon";
 
@@ -24,7 +23,7 @@ const HeroDescription = () => {
           icon={<Icon icon={"arrow"} size={15} className="text-current" />}
           variant="primary-empty"
           message="Zobacz nasze realizacje"
-          link={"/#galery"}
+          link={"#gallery"}
         />
       </div>
     </div>
