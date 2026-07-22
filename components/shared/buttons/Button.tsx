@@ -1,11 +1,18 @@
 const VARIANTS = {
   primary: "btn-primary",
+  "primary-empty": "btn-primary-empty",
   "primary-rounded": "btn-primary-rounded",
+  "primary-empty-dark": "btn-primary-empty-dark",
   ghost: "",
 };
 
 type Props = {
-  variant?: "primary" | "primary-rounded" | "ghost";
+  variant?:
+    | "primary"
+    | "primary-empty"
+    | "primary-rounded"
+    | "primary-empty-dark"
+    | "ghost";
   isLoading?: boolean;
   message?: string;
   icon?: React.ReactNode;
@@ -30,8 +37,8 @@ const Button = (props: Props) => {
       className={`relative block cursor-pointer select-none rounded-sm bg-transparent text-white transition-all duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:scale-[0.98] active:brightness-90 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 ${VARIANTS[props.variant || "primary"]} ${props.className ? props.className : ""} `}
     >
       <span className={` flex items-center justify-center gap-2`}>
-        {props.icon}
         {props.message}
+        {props.icon}
       </span>
 
       {props.isLoading && (

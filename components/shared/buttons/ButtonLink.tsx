@@ -4,6 +4,7 @@ const VARIANTS = {
   primary: "btn-primary",
   "primary-empty": "btn-primary-empty",
   "primary-rounded": "btn-primary-rounded text-white",
+  "primary-empty-dark": "btn-primary-empty-dark",
   ghost: "",
 };
 
@@ -14,7 +15,12 @@ type Props = {
   target?: string;
   rel?: string;
   className?: string;
-  variant?: "primary" | "primary-empty" | "primary-rounded" | "ghost";
+  variant?:
+    | "primary"
+    | "primary-empty"
+    | "primary-rounded"
+    | "primary-empty-dark"
+    | "ghost";
   ariaLabel?: string;
   ariaCurrent?: "page";
 };
