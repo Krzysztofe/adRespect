@@ -18,7 +18,7 @@ const Hero = () => {
   }, [emblaApi]);
 
   return (
-    <section className="lg:h-[80vh]">
+    <section className="">
       <div className="embla relative h-full">
         <div className="_embla-viewport h-full" ref={emblaRef}>
           <div className="_embla-container h-full">
@@ -26,12 +26,12 @@ const Hero = () => {
               return (
                 <div className="_embla-slide h-full lg:flex" key={idx}>
                   <div className="lg:w-1/2">
-                    <div className="_container-half bg-bg-dark ml-auto flex h-full items-center p-8 sm:p-20">
+                    <div className="_container-half bg-bg-dark ml-auto flex h-full items-center p-16 sm:px-26 sm:py-40">
                       {component}
                     </div>
                   </div>
 
-                  <div className="relative h-[40rem] lg:h-full lg:w-1/2">
+                  <div className="relative min-h-[40rem] self-stretch lg:w-1/2">
                     <Image
                       src={src}
                       alt={alt}
