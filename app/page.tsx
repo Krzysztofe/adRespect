@@ -12,22 +12,16 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main>
+    <>
       <Hero />
-
       <Reveal delay={0.1}>
         <Offer />
       </Reveal>
-
       <Reveal delay={0.15}>
         <About />
       </Reveal>
-
-      <Reveal delay={0.2}>
-        <Gallery />
-      </Reveal>
-
+      <Gallery />
       <Instagram />
-    </main>
+    </>
   );
 }

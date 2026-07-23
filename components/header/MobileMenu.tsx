@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Button from "../buttons/Button";
-import Icon from "../Icon";
+import Button from "../shared/buttons/Button";
+import Icon from "../shared/Icon";
 import MenuLink from "./MenuLink";
 import { navLinks } from "@/data/navLinks";
 import DropdownMenu from "./DropdownMenu";
@@ -15,7 +15,7 @@ const MobileMenu = () => {
   return (
     <div className="relative lg:hidden">
       {isOpen && (
-        <div className="fixed inset-0 z-10 " onClick={() => setOpen(false)} />
+        <div className="fixed inset-0 z-10" onClick={() => setOpen(false)} />
       )}
       <Button
         className=""
@@ -27,15 +27,7 @@ const MobileMenu = () => {
       />
 
       <nav
-        className={`
-                 fixed top-0 right-0 z-40
-                   h-screen w-80
-                  bg-white shadow-xl
-                  transform transition-transform duration-300 ease-in-out
-                  ${toggleClass}
-                  lg:hidden
-                   z-20
-                 `}
+        className={`fixed top-0 right-0 z-40 h-screen w-80 transform bg-white shadow-xl transition-transform duration-300 ease-in-out ${toggleClass} z-20 lg:hidden`}
       >
         {" "}
         <Button

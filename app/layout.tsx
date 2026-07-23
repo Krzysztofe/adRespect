@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/shared/header/Header";
+import Header from "@/components/header/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
@@ -13,7 +13,6 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Tytuł",
   description: "Opis",
-  icons: "/favicon.png",
 };
 
 export default function RootLayout({
@@ -24,8 +23,14 @@ export default function RootLayout({
   return (
     <html lang="pl" className={`${inter.variable} h-full antialiased`}>
       <body className="">
+        <a
+          href="#main-content"
+          className="absolute top-4 left-4 z-[999] -translate-y-20 rounded-md bg-white px-4 py-2 text-black shadow-lg transition-transform focus:translate-y-0"
+        >
+          Przejdź do treści
+        </a>
         <Header />
-        {children}
+        <main id="main-content">{children}</main>
         <Footer />
       </body>
     </html>

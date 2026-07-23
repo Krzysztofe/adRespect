@@ -7,19 +7,19 @@ const links = ["Kontakt", "Instagram", "Facebook", "LinkedIn"];
 const Footer = () => {
   return (
     <footer className="bg-black">
-      <div className="_container-sm py-26 text-font-light">
-        <div className="flex flex-col sm:flex-row gap-20 justify-between items-center pb-20 border-b">
+      <div className="_container-sm text-font-light py-26">
+        <div className="flex flex-col items-center justify-between gap-20 border-b pb-20 sm:flex-row">
           <Link href="/">
             <Image
-              src="/logo-white.png"
-              alt="Giard Design"
+              src="/photos/logoWhite.webp"
+              alt="Logo"
               className="object-contain"
               priority
               width={114}
               height={19}
             />
           </Link>
-          <div className="flex flex-col sm:flex-row items-center gap-6">
+          <div className="flex flex-col items-center gap-6 sm:flex-row">
             <p className="text-center">
               Daj znać, co możemy dla Ciebie zrobić!
             </p>
@@ -30,42 +30,32 @@ const Footer = () => {
             />
           </div>
         </div>
-        <div className="py-20 flex flex-col lg:flex-row gap-20 justify-between items-center text-sm">
-          <ul className="flex flex-col sm:flex-row gap-6 sm:gap-20">
+        <div className="flex flex-col items-center justify-between gap-20 py-20 text-sm lg:flex-row">
+          <ul className="flex flex-col gap-6 sm:flex-row sm:gap-20">
             {links.map((link) => {
               return (
                 <li className="flex justify-center" key={link}>
                   <ButtonLink
                     message={link}
                     link={`/${link}`}
-                    className=" !text-sm
-    relative
-    after:absolute
-    after:left-0
-    after:-bottom-1
-    after:h-[1px]
-    after:w-0
-    after:bg-white
-    after:transition-all
-    after:duration-300
-    hover:after:w-full"
+                    className="relative !text-sm after:absolute after:-bottom-1 after:left-0 after:h-[1px] after:w-0 after:bg-white after:transition-all after:duration-300 hover:after:w-full"
                   />
                 </li>
               );
             })}
           </ul>
-          <div className="flex flex-col sm:flex-row  sm:gap-20">
-            <p className="text-center">000-000-000</p>
-            <p className="text-center">giarddesign@kontakt.pl</p>
+          <div className="flex flex-col text-center sm:flex-row sm:gap-20">
+            <p>000-000-000</p>
+            <p>giarddesign@kontakt.pl</p>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row gap-4 justify-between items-center sm:pt-20">
+        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row sm:pt-20">
           <p>Prawa zastrzeżone &copy; 2022</p>
-          <div className="flex gap-8 items-center">
+          <div className="flex items-center gap-8">
             <p>made by</p>
             <Image
-              src="/group129.png"
-              alt="Giard Design"
+              src="/photos/adRespect.webp"
+              alt="Logo"
               className="object-contain"
               priority
               width={113}

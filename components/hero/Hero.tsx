@@ -4,34 +4,41 @@ import useEmblaCarousel from "embla-carousel-react";
 import { sliderItems } from "@/data/sliderItems";
 import Icon from "../shared/Icon";
 import Button from "../shared/buttons/Button";
+import { useCallback } from "react";
 
 const Hero = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
-  const goToPrev = () => emblaApi?.scrollPrev();
-  const goToNext = () => emblaApi?.scrollNext();
+  const goToPrev = useCallback(() => {
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
+
+  const goToNext = useCallback(() => {
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
 
   return (
     <section className="lg:h-[80vh]">
-      <div className="embla h-full relative">
+      <div className="embla relative h-full">
         <div className="_embla-viewport h-full" ref={emblaRef}>
           <div className="_embla-container h-full">
             {sliderItems.map(({ component, src, alt }, idx) => {
               return (
-                <div className="_embla-slide lg:flex h-full" key={idx}>
+                <div className="_embla-slide h-full lg:flex" key={idx}>
                   <div className="lg:w-1/2">
-                    <div className="_container-half ml-auto flex items-center bg-bg-dark p-8 sm:p-20 h-full">
+                    <div className="_container-half bg-bg-dark ml-auto flex h-full items-center p-8 sm:p-20">
                       {component}
                     </div>
                   </div>
 
-                  <div className="relative lg:w-1/2 lg:h-full h-[40rem]">
+                  <div className="relative h-[40rem] lg:h-full lg:w-1/2">
                     <Image
                       src={src}
                       alt={alt}
                       fill
                       className="object-cover"
-                      priority
+                      priority={idx === 0}
+                      loading={idx === 0 ? undefined : "lazy"}
                     />
                   </div>
                 </div>
@@ -39,17 +46,18 @@ const Hero = () => {
             })}
           </div>
         </div>
-        <div className="absolute bottom-0 right-0 flex justify center bg-bg-light lg:h-[13%] min-h-[3rem] ">
+        <div className="bg-bg-light absolute right-0 bottom-0 flex min-h-[3rem] justify-center lg:h-[13%]">
           <Button
             icon={
               <Icon
                 icon={"arrow"}
                 size={20}
-                className={"bg-font-dark rotate-90 h-full px-20"}
+                className={"bg-font-dark h-full rotate-90 px-20"}
               />
             }
             onClickAction={goToPrev}
             variant="ghost"
+            ariaLabel="Poprzedni slajd"
           />
 
           <Button
@@ -57,11 +65,12 @@ const Hero = () => {
               <Icon
                 icon={"arrow"}
                 size={20}
-                className={"bg-font-dark -rotate-90 h-full px-20"}
+                className={"bg-font-dark h-full -rotate-90 px-20"}
               />
             }
             onClickAction={goToNext}
             variant="ghost"
+            ariaLabel="Następny slajd"
           />
         </div>
       </div>

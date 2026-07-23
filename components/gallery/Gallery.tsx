@@ -6,6 +6,7 @@ import { galleryImages } from "@/data/galleryImages";
 import Button from "../shared/buttons/Button";
 import Icon from "../shared/Icon";
 import Lightbox from "./LightBox";
+import { motion } from "framer-motion";
 
 const Gallery = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -27,13 +28,11 @@ const Gallery = () => {
     return () => observer.disconnect();
   }, []);
 
-  const visibleImages = isExpanded ? galleryImages : galleryImages.slice(0, 15);
-
   return (
     <section id="gallery">
-      <div className="_container relative bg-bg-dark pb-8">
+      <div className="_container bg-bg-dark relative pb-8">
         <div className="p-30">
-          <p className="text-xs text-accent">Realizacje</p>
+          <p className="text-accent text-xs">Realizacje</p>
           <h2 className="text-2xl">
             Nasze <span className="italic">projekty</span>
           </h2>
@@ -61,21 +60,28 @@ const Gallery = () => {
               }}
             >
               <Masonry>
-                {visibleImages.map(({ src, alt }, index) => (
-                  <button
+                {galleryImages.map(({ src, alt }, index) => (
+                  <motion.button
                     key={alt}
                     onClick={() => setActiveIndex(index)}
-                    className="block w-full cursor-pointer"
+                    className="group block w-full cursor-pointer overflow-hidden"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: index * 0.06,
+                      ease: "easeOut",
+                    }}
                   >
                     <img
-                      key={alt}
                       src={src}
                       alt={alt}
                       loading="lazy"
                       decoding="async"
-                      className="block w-full"
+                      className="block w-full transition duration-300 group-hover:scale-105"
                     />
-                  </button>
+                  </motion.button>
                 ))}
               </Masonry>
             </ResponsiveMasonry>
@@ -83,16 +89,14 @@ const Gallery = () => {
         </div>
         {!isExpanded && (
           <div
-            className="
-                pointer-events-none absolute bottom-0 left-0 w-full bg-gradient-to-t from-bg-dark to-transparent
-    "
+            className="from-bg-dark pointer-events-none absolute bottom-0 left-0 w-full bg-gradient-to-t to-transparent"
             style={{
               height: `${galleryHeight / 2.5}px`,
             }}
           />
         )}
 
-        <div className="absolute bottom-26 left-1/2 -translate-x-1/2 flex justify-center py-10">
+        <div className="absolute bottom-26 left-1/2 flex -translate-x-1/2 justify-center py-10">
           <Button
             icon={
               <Icon
@@ -108,7 +112,7 @@ const Gallery = () => {
         </div>
       </div>
       <Lightbox
-        images={visibleImages}
+        images={galleryImages}
         activeIndex={activeIndex}
         onClose={() => setActiveIndex(null)}
         onChange={(index) => setActiveIndex(index)}

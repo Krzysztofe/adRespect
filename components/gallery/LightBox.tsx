@@ -4,6 +4,7 @@ import Image from "next/image";
 import Icon from "../shared/Icon";
 import Button from "../shared/buttons/Button";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 type ImageType = {
   src: string;
@@ -35,11 +36,11 @@ const Lightbox = ({ images, activeIndex, onClose, onChange }: Props) => {
 
   return (
     <div
-      className=" fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-10"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black p-10"
       onClick={onClose}
     >
       <Button
-        className="!absolute right-8 top-8 z-10"
+        className="!absolute top-8 right-8 z-10"
         onClickAction={(e) => {
           e.stopPropagation();
           onClose();
@@ -56,7 +57,7 @@ const Lightbox = ({ images, activeIndex, onClose, onChange }: Props) => {
             prevImage();
           }}
           icon={
-            <Icon icon="chevron" size={40} className="bg-white rotate-90" />
+            <Icon icon="chevron" size={40} className="rotate-90 bg-white" />
           }
           variant="ghost"
         />
@@ -104,7 +105,7 @@ const Lightbox = ({ images, activeIndex, onClose, onChange }: Props) => {
             nextImage();
           }}
           icon={
-            <Icon icon="chevron" size={40} className="bg-white -rotate-90" />
+            <Icon icon="chevron" size={40} className="-rotate-90 bg-white" />
           }
           variant="ghost"
         />

@@ -7,18 +7,18 @@ export const sliderItems: {
   alt: string;
 }[] = [
   {
-    src: "/Photo-hero.png",
+    src: "/photos/photoHero.webp",
     component: <HeroDescription />,
-    alt: "Photo hero",
+    alt: "Zdjęcie hero",
   },
   {
-    src: "/Photo-hero.png",
+    src: "/photos/photoHero.webp",
     component: <HeroDescription />,
-    alt: "Photo hero",
+    alt: "Zdjęcie hero",
   },
   {
-    src: "/Photo-hero.png",
+    src: "/photos/photoHero.webp",
     component: <HeroDescription />,
-    alt: "Photo hero",
+    alt: "Zdjęcie hero",
   },
 ];

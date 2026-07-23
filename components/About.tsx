@@ -5,9 +5,9 @@ import Icon from "./shared/Icon";
 const About = () => {
   return (
     <section>
-      <div className="lg:flex lg:flex-row-reverse items-stretch">
+      <div className="items-stretch lg:flex lg:flex-row-reverse">
         <div className="lg:w-1/2">
-          <div className="_container-half mr-auto flex items-center bg-accent p-20 sm:p-36 h-full text-white">
+          <div className="_container-half bg-accent mr-auto flex h-full items-center p-20 text-white sm:p-36">
             <div>
               {" "}
               <p className="text-xs">O firmie</p>
@@ -22,31 +22,30 @@ const About = () => {
                 minimalizm, geometria i elegancka prostota. Tworzymy ogrody
                 małoobsługowe, dostosowane do współczesnego trybu życia.
               </p>
-              <div className="flex flex-col sm:flex-row gap-10 mt-20">
+              <div className="mt-20 flex flex-col gap-10 sm:flex-row">
                 <ButtonLink
                   icon={
                     <Icon
                       icon={"arrow"}
                       size={15}
-                      className="text-current -rotate-90"
+                      className="-rotate-90 text-current"
                     />
                   }
                   variant="primary-empty"
                   message="Poznaj nas bliżej"
                   link={"/realizacje"}
-                  className="!border-white !text-white hover:!bg-white hover:!text-accent"
+                  className="hover:!text-accent !border-white !text-white hover:!bg-white"
                 />
               </div>
             </div>
           </div>
         </div>
-        <div className="relative lg:w-1/2 self-stretch min-h-[40rem]">
+        <div className="relative min-h-[40rem] self-stretch lg:w-1/2">
           <Image
-            src="/photo-passion.png"
+            src="/photos/photoAbout.webp"
             alt="Zdjęcie domu"
             fill
             className="object-cover"
-            priority
           />
         </div>
       </div>

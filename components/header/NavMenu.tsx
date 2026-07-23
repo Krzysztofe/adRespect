@@ -6,7 +6,7 @@ const NavMenu = () => {
   return (
     <nav>
       <ul className="flex items-center gap-6 sm:gap-16">
-        <DropdownMenu variant="desctop" />
+        <DropdownMenu variant="desktop" />
         {navLinks.map(({ text, link }) => (
           <MenuLink key={link} {...{ text, link }} />
         ))}

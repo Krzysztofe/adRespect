@@ -6,23 +6,23 @@ import SearchInput from "./SearchInput";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-20 bg-white py-6 shadow-[0_1px_0_rgba(0,0,0,0.06)]">
-      <div className="_container flex justify-between items-center">
+    <header className="sticky top-0 z-20 bg-white py-6">
+      <div className="_container flex items-center justify-between">
         <Link href="/">
-          <div className="relative h-12 w-52">
+          <div className="relative h-[1.9rem] w-[11.4rem]">
             <Image
-              src="/giarddesign.png"
-              alt="Giard Design"
+              src="/photos/logoBlack.webp"
+              alt="Logo"
               fill
               className="object-contain"
               priority
             />
           </div>
         </Link>
-        <div className="hidden lg:block ml-auto">
+        <div className="ml-auto hidden lg:block">
           <NavMenu />
         </div>
-        <div className="relative ml-auto lg:ml-16 mr-2">
+        <div className="relative mr-2 ml-auto lg:ml-16">
           <SearchInput />
         </div>
 

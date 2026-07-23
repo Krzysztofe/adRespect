@@ -30,7 +30,7 @@ const Offer = () => {
     <section>
       <div className="_container bg-bg-light px-20 py-30">
         <div className="_container-sm mb-30">
-          <p className="text-xs text-accent">Oferta</p>
+          <p className="text-accent text-xs">Oferta</p>
 
           <h2 className="text-2xl">
             Działamy <span className="italic">kompleksowo</span>
@@ -49,46 +49,26 @@ const Offer = () => {
             <Link
               href={`/${title.toLocaleLowerCase()}`}
               key={title}
-              className=" group max-w-[37rem] rounded-4xl bg-white p-14 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] hover:bg-accent/5"
+              className="group hover:bg-accent/5 max-w-[37rem] rounded-4xl bg-white p-14 transition-all duration-300 hover:-translate-y-3 hover:scale-[1.02] hover:shadow-2xl"
             >
               <Icon
                 icon={icon}
                 size={35}
-                className=" mb-10
-    text-current
-    transition-all
-    duration-300
-    group-hover:text-accent
-    group-hover:rotate-12
-    group-hover:scale-110"
+                className="group-hover:text-accent mb-10 text-current transition-all duration-300 group-hover:scale-110 group-hover:rotate-12"
               />
 
-              <h3 className="transition-colors duration-300 group-hover:text-accent text-lg mb-2">
+              <h3 className="group-hover:text-accent mb-2 text-lg transition-colors duration-300">
                 {title}
               </h3>
 
               <p className="mb-30 text-sm">{subtitle}</p>
 
-              <div
-                className=" !text-accent
-    border
-    border-transparent
-    border-b-accent
-    w-fit
-    transition-all
-    duration-300
-    group-hover:translate-x-2
-    flex gap-2 items-center"
-              >
+              <div className="!text-accent border-b-accent flex w-fit items-center gap-2 border border-transparent transition-all duration-300 group-hover:translate-x-2">
                 {linkMsg}
                 <Icon
                   icon="arrow"
                   size={15}
-                  className=" text-current
-        -rotate-90
-        transition-transform
-        duration-300
-        group-hover:translate-x-2"
+                  className="-rotate-90 text-current transition-transform duration-300 group-hover:translate-x-2"
                 />
               </div>
             </Link>

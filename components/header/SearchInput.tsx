@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Button from "../buttons/Button";
-import Icon from "../Icon";
+import Button from "../shared/buttons/Button";
+import Icon from "../shared/Icon";
 
 const SearchInput = () => {
   const [isOpen, setOpen] = useState(false);
@@ -39,27 +39,13 @@ const SearchInput = () => {
   return (
     <div ref={wrapperRef} className="relative flex items-center">
       <div
-        className={`
-       
-          overflow-hidden
-          transition-all duration-300 ease-in-out
-          ${isOpen ? "w-64 opacity-100" : "pointer-events-none w-0 opacity-0"}
-        `}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "w-64 opacity-100" : "pointer-events-none w-0 opacity-0"} `}
       >
         <input
           ref={inputRef}
           type="search"
           placeholder="Szukaj..."
-          className="
-          text-sm
-            h-10 w-64
-            border border-font-dark
-            rounded-lg
-            bg-white
-            px-4
-            outline-none
-            focus:border-black
-          "
+          className="border-font-dark h-10 w-64 rounded-lg border bg-white px-4 text-sm outline-none focus:border-black"
         />
       </div>
 
