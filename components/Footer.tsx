@@ -7,7 +7,7 @@ const links = ["Kontakt", "Instagram", "Facebook", "LinkedIn"];
 const Footer = () => {
   return (
     <footer className="bg-black">
-      <div className="_container-sm py-26 text-white">
+      <div className="_container-sm py-26 text-font-light">
         <div className="flex flex-col sm:flex-row gap-20 justify-between items-center pb-20 border-b">
           <Link href="/">
             <Image
@@ -20,7 +20,9 @@ const Footer = () => {
             />
           </Link>
           <div className="flex flex-col sm:flex-row items-center gap-6">
-            <p>Daj znać, co możemy dla Ciebie zrobić!</p>
+            <p className="text-center">
+              Daj znać, co możemy dla Ciebie zrobić!
+            </p>
             <ButtonLink
               variant="primary"
               link={"/kontakt"}
@@ -32,11 +34,21 @@ const Footer = () => {
           <ul className="flex flex-col sm:flex-row gap-6 sm:gap-20">
             {links.map((link) => {
               return (
-                <li className="flex justify-center">
+                <li className="flex justify-center" key={link}>
                   <ButtonLink
                     message={link}
                     link={`/${link}`}
-                    className="!text-sm"
+                    className=" !text-sm
+    relative
+    after:absolute
+    after:left-0
+    after:-bottom-1
+    after:h-[1px]
+    after:w-0
+    after:bg-white
+    after:transition-all
+    after:duration-300
+    hover:after:w-full"
                   />
                 </li>
               );

@@ -11,8 +11,8 @@ const About = () => {
             <div>
               {" "}
               <p className="text-xs">O firmie</p>
-              <h2 className="text-xl">
-                Towrzymy <br /> z <span className="italic">pasją</span>
+              <h2 className="text-2xl">
+                Tworzymy <br /> z <span className="italic">pasją</span>
               </h2>
               <p className="mt-14">
                 Każdy projekt to nowe wyzwanie. Dlatego nasz zespół tworzą

@@ -34,7 +34,7 @@ const Gallery = () => {
       <div className="_container relative bg-bg-dark pb-8">
         <div className="p-30">
           <p className="text-xs text-accent">Realizacje</p>
-          <h2 className="text-lg">
+          <h2 className="text-2xl">
             Nasze <span className="italic">projekty</span>
           </h2>
         </div>
@@ -87,7 +87,7 @@ const Gallery = () => {
                 pointer-events-none absolute bottom-0 left-0 w-full bg-gradient-to-t from-bg-dark to-transparent
     "
             style={{
-              height: `${galleryHeight / 3}px`,
+              height: `${galleryHeight / 2.5}px`,
             }}
           />
         )}

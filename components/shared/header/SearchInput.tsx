@@ -48,12 +48,13 @@ const SearchInput = () => {
       >
         <input
           ref={inputRef}
-          type="text"
+          type="search"
           placeholder="Szukaj..."
           className="
+          text-sm
             h-10 w-64
             border border-font-dark
-            rounded-sm
+            rounded-lg
             bg-white
             px-4
             outline-none

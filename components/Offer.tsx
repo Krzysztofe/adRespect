@@ -1,4 +1,3 @@
-import ButtonLink from "./shared/buttons/ButtonLink";
 import Icon from "./shared/Icon";
 import Link from "next/link";
 
@@ -33,11 +32,11 @@ const Offer = () => {
         <div className="_container-sm mb-30">
           <p className="text-xs text-accent">Oferta</p>
 
-          <h2 className="text-xl">
+          <h2 className="text-2xl">
             Działamy <span className="italic">kompleksowo</span>
           </h2>
 
-          <p className="mt-10 w-2/3">
+          <p className="mt-10 sm:w-2/3">
             Oferujemy kompletną obsługę inwestycji terenów zielonych.
             Projektujemy nowoczesne ogrody przydomowe oraz rezydencjonalne.
             Stworzymy dla Ciebie projekt, zwizualizujemy go i wcielimy w życie,
@@ -50,7 +49,7 @@ const Offer = () => {
             <Link
               href={`/${title.toLocaleLowerCase()}`}
               key={title}
-              className=" group max-w-[37rem] rounded-md bg-white p-14 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02]"
+              className=" group max-w-[37rem] rounded-4xl bg-white p-14 transition-all duration-300 hover:-translate-y-3 hover:shadow-2xl hover:scale-[1.02] hover:bg-accent/5"
             >
               <Icon
                 icon={icon}
@@ -64,11 +63,11 @@ const Offer = () => {
     group-hover:scale-110"
               />
 
-              <h3 className="transition-colors duration-300 group-hover:text-accent">
+              <h3 className="transition-colors duration-300 group-hover:text-accent text-lg mb-2">
                 {title}
               </h3>
 
-              <p className="mb-30">{subtitle}</p>
+              <p className="mb-30 text-sm">{subtitle}</p>
 
               <div
                 className=" !text-accent

@@ -5,10 +5,10 @@ const HeroDescription = () => {
   return (
     <div>
       {" "}
-      <h1 className="text-xl">
+      <h1 className="text-3xl">
         Nowoczesna aranżacja <br /> Twojego ogrodu
       </h1>
-      <p className="mt-14 w-3/4">
+      <p className="mt-14 sm:w-3/4">
         Marka GiardDesign to wieloletnie doświadczenie i wysoka estetyka
         realizacji. Oferujemy kompleksowy zakres usług z indywidualnym
         podejściem do każdego projektu.

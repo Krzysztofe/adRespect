@@ -26,7 +26,16 @@ const DropdownMenu = ({ variant }: Props) => {
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-2 text-sm border border-transparent hover:border-b-font-dark w-full"
+        className="flex items-center gap-2 text-sm w-full relative
+    after:absolute
+    after:left-0
+    after:-bottom-1
+    after:h-[1px]
+    after:w-0
+    after:bg-font-dark
+    after:transition-all
+    after:duration-300
+    hover:after:w-full"
       >
         Oferta
         <Icon
